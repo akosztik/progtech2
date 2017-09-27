@@ -1,7 +1,7 @@
 # progtech2
 course at ELTE IK
 
-Harry Potter   
+####Harry Potter   
 
 Roxfortban a felvett varázsló ifjoncokat a Teszlek Süveg osztotta be az iskola 4 házának (Griffendél, Hugrabug, Hollóhát, Mardekár) egyikébe, azonban a hosszú évek során szegény süveg elkopott. Albus Dumbledor-nak új megoldást kellett találnia a diákok elhelyezésének és számontartásának a biztosítására, továbbá fel szeretné jegyezni a környéken élő ismert lényeket is. 2 nap tanakodás után felkérte Pomona Bimba professzort, hogy termesszen mágikus babot (NetBeans), melyet felhasználva létrejöhet a mágiaügyi nyilvántartó rendszer. Dumbledor a történtek után felkért téged, hogy készítsd el az alkalmazást. Minimum elvárásai a programmal kapcsolatban:  
 • Legyenek megtekinthetőek a házak, tanulók, a lények és a jellemek.  
