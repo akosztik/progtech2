@@ -1,0 +1,102 @@
+Fejlesztői dokumentáció (3. rész) - Vázlat
+
+A utolsó beadandó feladatban az eddig elkészített dokumentációt kell kibővíteni egy Implementáció fejezettel.
+
+5.) Implementáció
+Technológiák és API-k
+Összefoglaló jelleggel hasznos dokumentálni az alkalmazás fejlesztése során felhasznált technológiákat és külső könyvtárakat.
+Algoritmusok
+Amennyiben az implementációhoz nevezetes algoritmust is használtál, érdemes lehet bemutatnod.
+Csomagszerkezet és metódusok
+Egyes dokumentációkba, főleg amennyiben egy bárki számára felhasználható csomagot készítünk, illik összefoglalva felsorolni az összes csomagunkat és publikus metódusainkat a bemutatásukkal együtt.
+Megjegyzés: Beadandó szempontjából Javadoc-ot használjatok erre a célra!
+Forráskód, futtatható kód
+Első sorban szakdolgozat készítésénél illik egy átlátható leírást készítenetek, hogy a CD mellékleteteken merre található a forráskód, dokumentáció, prerequisit alkalmazások és a telepítési útmutató.
+Fájlok forrása
+Amennyiben képi fájlokat is használtál például az implementációhoz, akkor illik megemlíteni, hogy hol találtad. Ezt megteheted akár itt is.
+További irodalmak
+
+Ian Sommerville - Szoftverrendszerek fejlesztése - Fejlesztés fejezet
+---------------------------------------------------------------------------
+Fejlesztői dokumentáció (4. rész) - Vázlat
+
+A utolsó beadandó feladatban az eddig elkészített dokumentációt kell kibővíteni egy Implementáció fejezettel.
+
+6.) Tesztelés
+Manuális tesztek
+Táblázatos jelleggel összefoglalva teszteset-eredmény páronként érdemes dokumentálni.
+Egység tesztek
+Unit tesztek bemutatása.
+[A beadandó feladatban nem szükséges ilyet készítenetek.]
+Biztonsági tesztek
+[A beadandó feladatban nem szükséges ilyet készítenetek.]
+A szoftvertesztelés a szoftverminőség-biztosítás és így a szoftverfejlesztés részét képezi, így a dokumentáltság szempontjából se vegyétek félvállról!
+
+Érdekességként érdemes lehet elolvasni az alábbi anyagot:
+HSTQB tananyag - Szoftvertesztelői alapismeretek: Megtekintés
+
+Kiegészítő hivatkozások
+
+ISTQB - Megtekintés
+
+HSTQB - Megtekintés
+
+További irodalmak
+
+Ian Sommerville - Szoftverrendszerek fejlesztése - Verifikáció és validáció fejezet
+http://valdar.web.elte.hu/progtech2/data/test/istqb_alap_hun.pdf
+https://www.istqb.org/
+
+--------------------------------------------------------------------------------
+
+JUnit: Megtekintés, http://junit.org/junit4/
+
+JUnit minták: Megtekintés, https://github.com/junit-team/junit4/wiki
+
+JUnit és EasyMock összefoglaló: Megtekintés, http://valdar.web.elte.hu/progtech2/data/test/junit_refcard.pdf
+
+Junit egyszerű minták: Letöltés, 
+
+Easy Mock: Megtekintés, http://easymock.org/
+
+Easy Mock - User guide: Megtekintés, http://easymock.org/user-guide.html#mocking
+
+Easy Mock - How to: Megtekintés, http://www.vogella.com/tutorials/EasyMock/article.html
+
+Mockolás (Mockito): Megtekintés, https://zeroturnaround.com/rebellabs/how-to-mock-up-your-unit-test-environment-to-create-alternate-realities/
+--------------------------------------
+
+Minta megvalósítás
+
+Az alábbi minta egy lehetséges MV-s megvalósítás.
+IDEA változat: Letöltés
+
+NetBeans-es változat: Letöltés
+
+A dátum választó megjelenítéséhez egy JDatePicker variációt használtam. Ha szeretnétek dátum választót is a felületetekhez, akkor ajánlom mindenkinek a figyelmébe.
+(A használatára egy minta a MainFrame-ben található. Szükséges osztály a csomagból: DateCellEditor)
+A külső könyvtár letölthető innen.
+
+Megelőző lépések az alkalmazás futtatásához (Adatbázis létrehozása) - NetBeans:
+
+NetBeans Services fülön megtalálható a Databases alatt a JavaDB. Amennyiben mégsem lenne látható ez a panel, úgy a felső Toolbar-on a Window menü alatt is meg találhatjátok. Gyorsbillentyűje : CTRL + 5
+Jobb kattintás a JavaDB ikonra, mad a Properties menüre kattintva állítsuk be a JavaDB elérésünket. Ehhez a GlassFish alkalmazás szerver alatt található javadb könyvtár elérését érdemes megadni.
+Jobb kattintás a JavaDB ikonra, majd válasszuk ki a Create Database-t. (ArtistDB)
+Adjuk meg az adatbázis nevét, a felhasználó nevet, majd a jelszót kétszer. (root, root)
+A 3. pont sikeres végrehajtása után megjelenik egy jdbc-s adatbázis elérés. Erre jobb kattintás, majd Connect.
+Miután elvégeztétek a fentebbi lépéseket, keressétek meg a DatabaseSetup osztályt. Jobb kattintás és Run File segítségével futtassátok le a kódot. (Ennek segítségével létre jönnek a szükséges táblák a mintaadatokkal.)
+Ezek után futtassátok a Boot osztályt az alkalmazás elindításához.
+
+A beadandó feladatotokban nem kötelező szálkezelést használni.
+
+Kiegészítő hivatkozások
+
+NetBeans - (Java DB) beállítás - Megtekintés,https://netbeans.org/kb/docs/ide/java-db.html
+JTable referencia - Megtekintés,https://docs.oracle.com/javase/7/docs/api/javax/swing/JTable.html
+AbstractTableModel referencia - Megtekintés, https://docs.oracle.com/javase/7/docs/api/javax/swing/table/AbstractTableModel.html
+https://docs.oracle.com/javase/7/docs/api/javax/swing/Timer.html
+Timer (swing) referencia - Megtekintés, https://docs.oracle.com/javase/7/docs/api/javax/swing/Timer.html
+SwingWorker referencia - Megtekintés, https://docs.oracle.com/javase/7/docs/api/javax/swing/SwingWorker.html
+Kiegészítő kódok
+
+Observer minta, MVC-hez: Letöltés
