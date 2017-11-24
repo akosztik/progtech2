@@ -1,4 +1,4 @@
-package harry.potter.datasource;
+package harry.potter.controller.datasource;
 
 public class DatabaseConstants {
 
@@ -20,10 +20,11 @@ public class DatabaseConstants {
     public static final String COLUMN_STUDENT_CHARACTER = "character_name";
     public static final String COLUMN_STUDENT_NAME = "name";
     public static final String COLUMN_STUDENT_AGE = "age";
+    public static final String COLUMN_STUDENT_HOUSE_ID = "house_id";
 
     public static final String TABLE_CREATURE = "creature";
     public static final String COLUMN_CREATURE_ID = "id";
-    public static final String COLUMN_CREATURE_CHARACTER = "character";
+    public static final String COLUMN_CREATURE_CHARACTER = "character_name";
     public static final String COLUMN_CREATURE_NAME = "name";
     public static final String COLUMN_CREATURE_FIRST_MATE = "firstMate";
 

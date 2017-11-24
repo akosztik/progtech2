@@ -1,8 +1,8 @@
-package harry.potter.datasource.helper;
+package harry.potter.controller.datasource;
 
 import java.sql.*;
 
-import static harry.potter.datasource.DatabaseConstants.*;
+import harry.potter.controller.datasource.DatabaseConstants;
 
 public class DBConnector {
 
@@ -11,11 +11,15 @@ public class DBConnector {
         closeConnection(conn, null);
     }
 
-    public static void closeConnection(Connection conn, Statement stmt) {
-        closeConnection(conn, stmt, null);
+    public static void closeConnection(Connection conn, PreparedStatement preparedStatement) {
+        closeConnection(conn, null, null, preparedStatement);
     }
 
-    public static void closeConnection(Connection conn, Statement stmt, ResultSet rs) {
+    public static void closeConnection(Connection conn, Statement stmt) {
+        closeConnection(conn, stmt, null, null);
+    }
+
+    public static void closeConnection(Connection conn, Statement stmt, ResultSet rs, PreparedStatement preparedStatement) {
         try {
             if (rs != null) {
                 rs.close();
@@ -27,6 +31,10 @@ public class DBConnector {
             if (conn != null) {
                 conn.close();
             }
+
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
             System.out.println("Goodbye!");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -35,9 +43,9 @@ public class DBConnector {
 
     public static Connection getConnection() {
         try {
-            Class.forName(JDBC_DRIVER);
+            Class.forName(DatabaseConstants.JDBC_DRIVER);
             System.out.println("Connecting to database...");
-            return DriverManager.getConnection(DB_URL, USER, PASS);
+            return DriverManager.getConnection(DatabaseConstants.DB_URL, DatabaseConstants.USER, DatabaseConstants.PASS);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }

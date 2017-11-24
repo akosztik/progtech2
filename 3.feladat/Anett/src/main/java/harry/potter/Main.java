@@ -1,7 +1,7 @@
 package harry.potter;
 
-import harry.potter.datasource.StudentDatasource;
-import harry.potter.datasource.model.Student;
+import harry.potter.controller.datasource.StudentDatasource;
+import harry.potter.model.Student;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        test.addStrudent(1, "CharValami", "Bela");
+        test.addStrudent(2, "SSSS", "AAAA");
         Main.listStudents();
-        test.changeCharacter("Bela", "CharValami2");
+        test.changeCharacter("AAAA", "WWWWW");
         Main.listStudents();
     }
 

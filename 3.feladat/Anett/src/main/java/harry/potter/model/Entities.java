@@ -1,4 +1,4 @@
-package harry.potter.datasource.model;
+package harry.potter.model;
 
 public abstract class Entities {
 
