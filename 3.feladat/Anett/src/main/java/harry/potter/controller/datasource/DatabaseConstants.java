@@ -12,8 +12,6 @@ public class DatabaseConstants {
     public static final String COLUMN_HOUSE_ID = "id";
     public static final String COLUMN_HOUSE_CREST = "crest";
     public static final String COLUMN_HOUSE_NAME = "name";
-    public static final String COLUMN_HOUSE_NUMBER_OF_STUDENTS = "numberOfStudents";
-
 
     public static final String TABLE_STUDENT = "student";
     public static final String COLUMN_STUDENT_ID = "id";

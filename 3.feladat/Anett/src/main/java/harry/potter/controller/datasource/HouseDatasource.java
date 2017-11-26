@@ -1,17 +1,39 @@
 package harry.potter.controller.datasource;
 
-import static harry.potter.controller.datasource.DatabaseConstants.COLUMN_HOUSE_ID;
-import static harry.potter.controller.datasource.DatabaseConstants.COLUMN_HOUSE_NAME;
-import static harry.potter.controller.datasource.DatabaseConstants.TABLE_HOUSE;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
+import static harry.potter.controller.datasource.DatabaseConstants.*;
 
 public class HouseDatasource {
 
     DBConnector connector = new DBConnector();
 
+    public void addHouse(String crest, String name) {
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        try {
+            conn = connector.getConnection();
+
+            String sql = "INSERT INTO " +
+                    TABLE_HOUSE +
+                    " (" + COLUMN_HOUSE_CREST +
+                    ", " + COLUMN_HOUSE_NAME +
+                    ") VALUES (?,?)";
+
+            preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setString(1, crest);
+            preparedStatement.setString(2, name);
+
+            preparedStatement.executeUpdate();
+            connector.closeConnection(conn);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            connector.closeConnection(conn, preparedStatement);
+        }
+    }
     public Integer getHouseIdByName(String houseName) {
 
         Connection conn = null;

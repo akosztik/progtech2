@@ -2,16 +2,19 @@ package harry.potter.model;
 
 public class Student extends Entities {
 
-
-    private Long id;
     private Integer age;
     private Integer houseId;
 
 
-    public Student(Long id, Integer age, String character, String name) {
-        super(character, name);
+    public Student( Integer age, String name) {
+        super(name);
         this.age = age;
-        this.id = id;
+    }
+
+    public Student( Integer age,String character, String name,Integer houseId) {
+        super(name,character);
+        this.age = age;
+        this.houseId= houseId;
     }
 
     public Integer getHouseId() {
@@ -20,14 +23,6 @@ public class Student extends Entities {
 
     public void setHouseId(final Integer houseId) {
         this.houseId = houseId;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Integer getAge() {

@@ -15,7 +15,7 @@ public class StudentDatasource {
 
     DBConnector connector = new DBConnector();
 
-    public void addStrudent(Integer age, String character, String name) {
+    public void addStudent(Integer age, String character, String name) {
         Connection conn = null;
         PreparedStatement preparedStatement = null;
         try {
@@ -44,7 +44,7 @@ public class StudentDatasource {
 
     public List<Student> listStudents() {
 
-        List<Student> strudents = new ArrayList<>();
+        List<Student> students = new ArrayList<>();
         Connection conn = null;
         PreparedStatement preparedStatement = null;
         Statement stmt = null;
@@ -67,8 +67,9 @@ public class StudentDatasource {
                 String character = rs.getCharacterStream(COLUMN_STUDENT_CHARACTER).toString();
                 String name = rs.getString(COLUMN_STUDENT_NAME);
                 Integer age = rs.getInt(COLUMN_STUDENT_AGE);
+                Integer house_id = rs.getInt(COLUMN_STUDENT_HOUSE_ID);
 
-                strudents.add(new Student(id, age, character, name));
+                students.add(new Student( age, name,character, house_id));
             }
             connector.closeConnection(conn, stmt, rs, preparedStatement);
         } catch (Exception e) {
@@ -76,7 +77,7 @@ public class StudentDatasource {
         } finally {
             connector.closeConnection(conn, preparedStatement);
         }
-        return strudents;
+        return students;
     }
 
     public Integer numberOfStudentsByHouseName(Integer houseId) {

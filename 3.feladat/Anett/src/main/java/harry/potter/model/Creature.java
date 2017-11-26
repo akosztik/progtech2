@@ -4,34 +4,34 @@ import java.util.Date;
 
 public class Creature extends Entities {
 
-    private Long id;
+
     private Date firstMate;
 
-    public Creature(String character, String name, Date firstMate) {
-        super(character, name);
-        this.firstMate = firstMate;
+    public Creature(String name) {
+        super(name);
+        this.firstMate = null;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public Creature(String name, String character, Date firstMet) {
+        super(name,character);
+        this.firstMate = firstMet;
     }
 
     public Date getFirstMate() {
         return firstMate;
     }
 
-    public void setFirstMate(Date firstMate) {
-        this.firstMate = firstMate;
+    public void setFirstMate(Date firstMate)  {
+        if (firstMate==null){
+            this.firstMate = firstMate;
+        }
+        else{
+            System.out.println("mar megadva");
+        }
     }
 
     @Override
     public String toString() {
         return "Creature{" +
-                "id=" + id +
                 ", firstMate=" + firstMate +
                 '}';
     }

@@ -4,16 +4,12 @@ import java.util.List;
 
 public class House {
 
-    private Long id;
     private String crest;
     private String name;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public House(){
+        this.crest=crest;
+        this.name=name;
     }
 
     public String getCrest() {
@@ -36,7 +32,6 @@ public class House {
     @Override
     public String toString() {
         return "House{" +
-                "id=" + id +
                 ", crest='" + crest + '\'' +
                 ", name='" + name + '\'' + '}';
     }
