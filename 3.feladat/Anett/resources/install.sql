@@ -15,9 +15,13 @@ ALTER TABLE `harry_potter`.`student`
 CHANGE COLUMN `name` `name` VARCHAR(255) NOT NULL ,
 ADD UNIQUE INDEX `name_UNIQUE` (`name` ASC);
 
-
-
-
+CREATE TABLE `harry_potter`.`creature` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NULL,
+  `character_name` VARCHAR(255) NULL,
+  `character_name` VARCHAR(255) NULL,
+  `firstmet` DATE(6) NULL,
+  PRIMARY KEY (`id`));
 
 CREATE TABLE `harry_potter`.`house` (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -29,15 +33,10 @@ ALTER TABLE `harry_potter`.`house`
 CHANGE COLUMN `name` `name` VARCHAR(255) NOT NULL ,
 ADD UNIQUE INDEX `name_UNIQUE` (`name` ASC);
 
-
-
-
-
 CREATE TABLE `harry_potter`.`karakter` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NULL,
   PRIMARY KEY (`id`));
-
 
 CREATE TABLE `harry_potter`.`creature` (
   `id` INT NOT NULL AUTO_INCREMENT,

@@ -24,7 +24,7 @@ public class DatabaseConstants {
     public static final String COLUMN_CREATURE_ID = "id";
     public static final String COLUMN_CREATURE_CHARACTER = "character_name";
     public static final String COLUMN_CREATURE_NAME = "name";
-    public static final String COLUMN_CREATURE_FIRST_MATE = "firstMate";
+    public static final String COLUMN_CREATURE_FIRST_MET = "firstmet";
 
     public static final String TABLE_CHARACTER = "karakter";
     public static final String COLUMN_CHARACTER_ID = "id";
