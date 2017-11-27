@@ -110,7 +110,7 @@ public class CreatureDatasource {
             String selectSql = "SELECT " + COLUMN_CREATURE_CHARACTER +
                     ", " + COLUMN_CREATURE_ID +
                     ", " + COLUMN_CREATURE_NAME +
-                    ", " + COLUMN_CREATURE_FIRST_MATE +
+                    ", " + COLUMN_CREATURE_FIRST_MET +
                     " FROM " + TABLE_CREATURE +
                     " WHERE " + COLUMN_CREATURE_NAME +
                     " = ?";
@@ -123,7 +123,7 @@ public class CreatureDatasource {
                 Long id = rs.getLong(COLUMN_CREATURE_ID);
                 String character = rs.getCharacterStream(COLUMN_CREATURE_CHARACTER).toString();
                 String name = rs.getString(COLUMN_CREATURE_NAME);
-                Date firstMet = rs.getDate(COLUMN_CREATURE_FIRST_MATE);
+                Date firstMet = rs.getDate(COLUMN_CREATURE_FIRST_MET);
 
                 creature = new Creature(character, name, firstMet);
             }
