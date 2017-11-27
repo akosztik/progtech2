@@ -26,7 +26,7 @@ public class CreatureDatasource {
                     TABLE_CREATURE +
                     " (" + COLUMN_CREATURE_NAME +
                     ", " + COLUMN_CREATURE_CHARACTER +
-                    ") VALUES (?)";
+                    ") VALUES (?,?)";
 
             preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(1, name);

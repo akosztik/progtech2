@@ -1,19 +1,24 @@
 package harry.potter.view;
 
+import harry.potter.controller.service.CharacterService;
+import harry.potter.controller.service.CreatureService;
+import harry.potter.model.Creature;
+import harry.potter.model.Character;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class NewView{
+public class NewView {
     JDialog dialog;
     JButton button;
 
-    public NewView(String d,String l, Frame f){
-        JPanel pan= new JPanel();
+    public NewView(String d, String l, Frame f) {
+        JPanel pan = new JPanel();
         pan.setLayout(new FlowLayout());
-        dialog= new JDialog(f);
+        dialog = new JDialog(f);
         dialog.setResizable(true);
         dialog.setTitle(d);
         dialog.setModal(true);
@@ -30,16 +35,24 @@ public class NewView{
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("new Item: " +text.getText() + " , " );
-
+                if (d == "uj leny felvitele") {
+                    Creature creature = new Creature(text.getText());
+                    CreatureService cs = new CreatureService();
+                    cs.addCreature(creature);
+                } else {
+                    Character character = new Character(text.getText());
+                    CharacterService cs = new CharacterService();
+                    cs.addCharacter(character);
+                }
             }
         });
 
     }
-    public NewView(String d,String l,String ll,Frame f){
-        JPanel pan= new JPanel();
+
+    public NewView(String d, String l, String ll, Frame f) {
+        JPanel pan = new JPanel();
         pan.setLayout(new FlowLayout());
-        dialog= new JDialog(f);
+        dialog = new JDialog(f);
         dialog.setResizable(true);
         dialog.setTitle(d);
         //dialog.add(new JLabel(l));
@@ -60,7 +73,7 @@ public class NewView{
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("new Item: " +text.getText() + " , " );
+
 
             }
         });
