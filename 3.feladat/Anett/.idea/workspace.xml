@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f33535d-e93f-40e3-b2b5-467160ea0c69" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/controller/datasource/CreatureDatasource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/controller/service/CreatureService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/controller/service/HouseService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/model/Character.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/view/MainMenu.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/view/MainWindow.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/view/NewView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/harry/potter/Main.class" afterPath="$PROJECT_DIR$/target/classes/harry/potter/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/harry/potter/controller/datasource/DBConnector.class" afterPath="$PROJECT_DIR$/target/classes/harry/potter/controller/datasource/DBConnector.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/harry/potter/controller/datasource/HouseDatasource.class" afterPath="$PROJECT_DIR$/target/classes/harry/potter/controller/datasource/HouseDatasource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/harry/potter/controller/datasource/StudentDatasource.class" afterPath="$PROJECT_DIR$/target/classes/harry/potter/controller/datasource/StudentDatasource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/harry/potter/controller/service/StudentService.class" afterPath="$PROJECT_DIR$/target/classes/harry/potter/controller/service/StudentService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Anett.iml" afterPath="$PROJECT_DIR$/Anett.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/harry/potter/Main.java" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/harry/potter/controller/datasource/DatabaseConstants.java" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/controller/datasource/DatabaseConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/harry/potter/controller/datasource/HouseDatasource.java" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/controller/datasource/HouseDatasource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/harry/potter/controller/datasource/StudentDatasource.java" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/controller/datasource/StudentDatasource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/harry/potter/controller/service/StudentService.java" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/controller/service/StudentService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/harry/potter/model/Creature.java" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/model/Creature.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/harry/potter/model/Entities.java" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/model/Entities.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/harry/potter/model/House.java" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/model/House.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/harry/potter/model/Student.java" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/model/Student.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/harry/potter/view/NewView.java" afterPath="$PROJECT_DIR$/src/main/java/harry/potter/view/NewView.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -71,8 +48,8 @@
       <file leaf-file-name="NewView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/harry/potter/view/NewView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+            <state relative-caret-position="274">
+              <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -238,9 +215,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="973" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="width" value="699" />
+    <option name="height" value="726" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -534,7 +511,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="973" height="1047" extended-state="0" />
+    <frame x="-8" y="0" width="699" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -559,7 +536,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3155695" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4434655" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.49634275" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1053,8 +1030,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/harry/potter/view/NewView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        <state relative-caret-position="274">
+          <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

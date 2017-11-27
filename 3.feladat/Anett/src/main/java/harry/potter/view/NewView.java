@@ -26,15 +26,14 @@ public class NewView{
         //dialog.add(button);
         pan.add(button);
         dialog.add(pan);
+        dialog.pack();
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("new Item2: " +text.getText() + " , " );
+                System.out.println("new Item: " +text.getText() + " , " );
                 
             }
         });
-        dialog.pack();
-
 
     }
     public NewView(String d,String l,String ll,Frame f){
@@ -57,13 +56,14 @@ public class NewView{
         pan.add(button);
         //dialog.add(button);
         dialog.add(pan);
+        dialog.pack();
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("new Item2: " +text.getText() + " , " + text2.getText());
+                System.out.println("new Item: " +text.getText() + " , " );
+
             }
         });
-        dialog.pack();
 
     }
 
