@@ -11,7 +11,13 @@ CREATE TABLE `harry_potter`.`student` (
   ALTER TABLE `harry_potter`.`student`
 ADD UNIQUE INDEX `id_UNIQUE` (`id` ASC);
 
-
+CREATE TABLE `harry_potter`.`creature` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NULL,
+  `character_name` VARCHAR(255) NULL,
+  `character_name` VARCHAR(255) NULL,
+  `firstmet` DATE(6) NULL,
+  PRIMARY KEY (`id`));
 
 CREATE TABLE `harry_potter`.`house` (
   `id` INT NOT NULL AUTO_INCREMENT,
