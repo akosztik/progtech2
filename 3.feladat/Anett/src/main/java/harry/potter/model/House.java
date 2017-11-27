@@ -4,12 +4,30 @@ import java.util.List;
 
 public class House {
 
+    private Integer id;
     private String crest;
     private String name;
 
-    public House(){
-        this.crest=crest;
-        this.name=name;
+    public House() {
+    }
+
+    public House(String name, String crest) {
+        this.crest = crest;
+        this.name = name;
+    }
+
+    public House(Integer id, String name, String crest) {
+        this.id = id;
+        this.crest = crest;
+        this.name = name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getCrest() {

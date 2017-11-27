@@ -8,22 +8,30 @@ import harry.potter.model.Student;
 import java.awt.event.ActionEvent;
 
 public class StudentService {
-    HouseDatasource hd;
-    StudentDatasource sd;
+
+    private HouseDatasource hd = null;
+    private StudentDatasource sd = null;
+
+    public StudentService() {
+        hd = new HouseDatasource();
+        sd = new StudentDatasource();
+    }
+
+
+    public StudentService(HouseDatasource hd, StudentDatasource sd) {
+        this.hd = hd;
+        this.sd = sd;
+    }
 
 
     public void addStudent(Student student) {
-        sd = new StudentDatasource();
-        sd.addStudent(student.getAge(),student.getCharacter(),student.getName());
+        sd.addStudent(student.getAge(), student.getCharacter(), student.getName());
 
     }
-    public void setStudentHouse(String studentName, String houseName) {
-        HouseDatasource hd = new HouseDatasource();
-        StudentDatasource sd = new StudentDatasource();
 
+    public Student setStudentHouse(String studentName, String houseName) {
         Integer houseId = hd.getHouseIdByName(houseName);
-        sd.addStudentToHouse(studentName, houseId);
-
+        return sd.addStudentToHouse(studentName, houseId);
     }
 
 

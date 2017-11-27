@@ -11,11 +11,19 @@ CREATE TABLE `harry_potter`.`student` (
   ALTER TABLE `harry_potter`.`student`
 ADD UNIQUE INDEX `id_UNIQUE` (`id` ASC);
 
-
+ALTER TABLE `harry_potter`.`student` 
+CHANGE COLUMN `name` `name` VARCHAR(255) NOT NULL ,
+ADD UNIQUE INDEX `name_UNIQUE` (`name` ASC);
 
 CREATE TABLE `harry_potter`.`house` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `crest` VARCHAR(255) NULL,
   `name` VARCHAR(255) NULL,
   PRIMARY KEY (`id`));
+
+
+ALTER TABLE `harry_potter`.`house` 
+CHANGE COLUMN `name` `name` VARCHAR(255) NOT NULL ,
+ADD UNIQUE INDEX `name_UNIQUE` (`name` ASC);
+
 
