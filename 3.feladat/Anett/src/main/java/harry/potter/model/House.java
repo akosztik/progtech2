@@ -7,7 +7,7 @@ public class House {
     private String crest;
     private String name;
 
-    public House(){
+    public House(String name, String crest){
         this.crest=crest;
         this.name=name;
     }

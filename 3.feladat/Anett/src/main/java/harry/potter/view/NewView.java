@@ -2,8 +2,12 @@ package harry.potter.view;
 
 import harry.potter.controller.service.CharacterService;
 import harry.potter.controller.service.CreatureService;
+import harry.potter.controller.service.HouseService;
+import harry.potter.controller.service.StudentService;
 import harry.potter.model.Creature;
 import harry.potter.model.Character;
+import harry.potter.model.House;
+import harry.potter.model.Student;
 
 import javax.swing.*;
 import java.awt.*;
@@ -72,7 +76,15 @@ public class NewView{
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                if (d=="uj haz felvitele"){
+                    House house= new House(text.getText(),text2.getText());
+                    HouseService hs =new HouseService();
+                    hs.addHouse(house);
+                }else{
+                    Student student= new Student(Integer.parseInt(text2.getText()), text.getText());
+                    StudentService ss =new StudentService();
+                    ss.addStudent(student);
+                }
 
             }
         });
