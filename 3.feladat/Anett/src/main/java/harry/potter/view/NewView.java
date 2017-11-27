@@ -72,7 +72,7 @@ public class NewView{
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("new Item: " +text.getText() + " , " );
+
 
             }
         });
