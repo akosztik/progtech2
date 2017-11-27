@@ -31,7 +31,7 @@ public class NewView{
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("new Item: " +text.getText() + " , " );
-                
+
             }
         });
 
