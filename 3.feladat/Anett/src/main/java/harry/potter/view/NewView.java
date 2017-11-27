@@ -1,5 +1,10 @@
 package harry.potter.view;
 
+import harry.potter.controller.service.CharacterService;
+import harry.potter.controller.service.CreatureService;
+import harry.potter.model.Creature;
+import harry.potter.model.Character;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -30,8 +35,15 @@ public class NewView{
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("new Item: " +text.getText() + " , " );
-
+                if (d=="uj leny felvitele"){
+                    Creature creature= new Creature(text.getText());
+                    CreatureService cs =new CreatureService();
+                    cs.addCreature(creature);
+                }else{
+                    Character character= new Character(text.getText());
+                    CharacterService cs =new CharacterService();
+                    cs.addCharacter(character);
+                }
             }
         });
 

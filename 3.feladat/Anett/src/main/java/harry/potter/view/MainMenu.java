@@ -14,6 +14,7 @@ public class MainMenu{
     JMenuItem addCreature;
     JMenuItem addHouse;
     JMenuItem addStudent;
+    JMenuItem addCharacter;
     JMenuItem changeCharacter;
     JMenuItem solveHousing;
     JMenuItem list;
@@ -32,6 +33,7 @@ public class MainMenu{
         this.addCreature= new JMenuItem("uj leny felvitele");
         this.addHouse= new JMenuItem("uj haz felvitele");
         this.addStudent= new JMenuItem("uj tanulo felvitele");
+        this.addCharacter= new JMenuItem("uj karakter felvitele");
         this.changeCharacter= new JMenuItem("tanulok/lenyek jellemenek modositasa");
         this.solveHousing= new JMenuItem("tanulo elhelyezese");
         this.list= new JMenuItem("haz/jellem/tanulo/leny listazasa");
@@ -42,6 +44,16 @@ public class MainMenu{
             public void actionPerformed(ActionEvent e) {
                 System.out.println("addCreature");
                 NewView dialog= new NewView("uj leny felvitele","Adja meg a leny nevet: ",frame);
+                dialog.dialog.setLocationRelativeTo(frame);
+                dialog.dialog.setVisible(true);
+            }
+        });
+        newData.add(addCharacter);
+        addCharacter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("addCharacter");
+                NewView dialog= new NewView("uj karakter felvitele","Adja meg a karakter nevet: ",frame);
                 dialog.dialog.setLocationRelativeTo(frame);
                 dialog.dialog.setVisible(true);
             }

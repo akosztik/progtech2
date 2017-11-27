@@ -2,11 +2,16 @@ package harry.potter.model;
 
 public class Character {
     String name;
-    public Character(String name){
+    public Character(String name)
+    {
         this.name=name;
     }
 
-    public String getDefaultCharacter(){
-        return "semleges";
+    @Override
+    public String toString() {
+        return this.name;
+    }
+    public String getName(){
+        return this.name;
     }
 }

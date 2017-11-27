@@ -19,3 +19,8 @@ CREATE TABLE `harry_potter`.`house` (
   `name` VARCHAR(255) NULL,
   PRIMARY KEY (`id`));
 
+CREATE TABLE `harry_potter`.`karakter` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`));
+
