@@ -14,18 +14,18 @@ public class Main {
 
         MainWindow startup= new MainWindow();
 
-        test.addStudent(2, "SSSS", "AAAA");
-        Main.listStudents();
-        test.changeCharacter("AAAA", "WWWWW");
-        Main.listStudents();
+//        test.addStudent(2, "SSSS", "AAAA");
+//        Main.listStudents();
+//        test.changeCharacter("AAAA", "WWWWW");
+//        Main.listStudents();
     }
 
-    private static void listStudents() {
-
-        List<Student> students = test.listStudents();
-        for (Student student : students) {
-            System.out.println(" ID: " + student.getId() + " AGE: " + student.getAge() +
-                    " NAME: " + student.getName() + " Character:" + student.getCharacter().toString());
-        }
-    }
+//    private static void listStudents() {
+//
+//        List<Student> students = test.listStudents();
+//        for (Student student : students) {
+//            System.out.println(" ID: " + student.getId() + " AGE: " + student.getAge() +
+//                    " NAME: " + student.getName() + " Character:" + student.getCharacter().toString());
+//        }
+//    }
 }

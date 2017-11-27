@@ -1,7 +1,6 @@
 package harry.potter.controller.datasource;
 
 import harry.potter.model.Creature;
-import harry.potter.model.Student;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -97,6 +96,44 @@ public class CreatureDatasource {
         } finally {
             connector.closeConnection(conn, preparedStatement);
         }
+    }
+
+    public Creature getCreatureByName(String findedName) {
+        Creature creature = null;
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        Statement stmt = null;
+
+        try {
+            conn = connector.getConnection();
+
+            String selectSql = "SELECT " + COLUMN_CREATURE_CHARACTER +
+                    ", " + COLUMN_CREATURE_ID +
+                    ", " + COLUMN_CREATURE_NAME +
+                    ", " + COLUMN_CREATURE_FIRST_MATE +
+                    " FROM " + TABLE_CREATURE +
+                    " WHERE " + COLUMN_CREATURE_NAME +
+                    " = ?";
+
+            preparedStatement = conn.prepareStatement(selectSql);
+            preparedStatement.setString(1, findedName);
+            ResultSet rs = preparedStatement.executeQuery(selectSql);
+
+            if (rs.first()) {
+                Long id = rs.getLong(COLUMN_CREATURE_ID);
+                String character = rs.getCharacterStream(COLUMN_CREATURE_CHARACTER).toString();
+                String name = rs.getString(COLUMN_CREATURE_NAME);
+                Date firstMet = rs.getDate(COLUMN_CREATURE_FIRST_MATE);
+
+                creature = new Creature(character, name, firstMet);
+            }
+            connector.closeConnection(conn, stmt, rs, preparedStatement);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            connector.closeConnection(conn, preparedStatement);
+        }
+        return creature;
     }
 
 }
