@@ -6,6 +6,11 @@ public class Student extends Entities {
     private Integer age;
     private Integer houseId;
 
+    /**
+     * A tulterhelt kostruktorok:
+     *kulonbozo esetben peldanyositjak a Student osztalyt.
+     */
+
     public Student(Integer age, String name) {
         super(name);
         this.age = age;
@@ -23,6 +28,12 @@ public class Student extends Entities {
         this.age = age;
         this.houseId = houseId;
     }
+
+    /**
+     * Az osztaly getterei es setterei:
+     * egeszet adnak vissza,
+     * vagy az Student Id , house id, eletkoraval ternek vissza
+     */
 
     public Integer getId() {
         return id;
@@ -47,6 +58,10 @@ public class Student extends Entities {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+    /**
+     * A feluldefinialt toString metodus egy karakterlancot ad vissza.
+     */
 
     @Override
     public String toString() {

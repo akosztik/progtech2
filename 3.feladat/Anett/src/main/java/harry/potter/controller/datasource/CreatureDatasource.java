@@ -16,6 +16,12 @@ public class CreatureDatasource {
 
     DBConnector connector = new DBConnector();
 
+    /**.
+     * Ezekkel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy a creatureunket beszurja a tablaba.
+     * parametere: a leny neve, karaktere.
+     */
+
     public void addCreature(String name,String character) {
         Connection conn = null;
         PreparedStatement preparedStatement = null;
@@ -40,6 +46,11 @@ public class CreatureDatasource {
             connector.closeConnection(conn, preparedStatement);
         }
     }
+
+    /**.
+     * Ezekkel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy az osszes lenyt lekerdezze. ArrayListtel ter vissza.
+     */
 
     public List<Creature> listCreatures() {
 

@@ -7,6 +7,10 @@ public class MainWindow {
     JFrame frame;
     MainMenu mainMenu;
 
+    /**
+     * Ezzel a konstruktorral peldanyositjuk a MainWindow nevu osztalyt.
+     * Amely a frame-et es a fomenut generalja.
+     */
 
     public MainWindow(){
         this.frame= new JFrame("Magiaugyi nyilvantarto");

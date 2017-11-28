@@ -8,6 +8,11 @@ public class House {
     private String crest;
     private String name;
 
+    /**
+     * A tulterhelt kostruktorok:
+     *kulonbozo esetben peldanyositjak a House osztalyt.
+     */
+
     public House() {
     }
 
@@ -21,7 +26,11 @@ public class House {
         this.crest = crest;
         this.name = name;
     }
-
+    /**
+     * A getId Integert ad vissza,
+     * mig a setIdval megadhato
+     * az osztaly Idja.
+     */
     public Integer getId() {
         return id;
     }
@@ -29,6 +38,12 @@ public class House {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    /**
+     * Az osztaly getterei es setterei:
+     * karakterlancot adnak vissza,
+     * vagy a House nevevel vagy cimerevel ternek vissza.
+     */
 
     public String getCrest() {
         return crest;
@@ -46,7 +61,9 @@ public class House {
         this.name = name;
     }
 
-
+    /**
+     * A feluldefinialt toString metodus egy karakterlancot ad vissza.
+     */
     @Override
     public String toString() {
         return "House{" +

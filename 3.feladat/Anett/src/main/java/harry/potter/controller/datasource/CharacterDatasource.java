@@ -16,6 +16,12 @@ public class CharacterDatasource {
 
     DBConnector connector = new DBConnector();
 
+    /**.
+     * Ezekkel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy a characterunket beszurja a tablaba.
+     * parametere: a character neve.
+     */
+
     public void addCharacter(String name) {
         Connection conn = null;
         PreparedStatement preparedStatement = null;
@@ -38,6 +44,11 @@ public class CharacterDatasource {
             connector.closeConnection(conn, preparedStatement);
         }
     }
+
+    /**.
+     * Ezekkel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy az osszes karaktert lekerdezze. ArrayListtel ter vissza.
+     */
 
     public List<Character> listCharacters() {
 
