@@ -1,5 +1,7 @@
 package harry.potter.controller.datasource;
 
+import harry.potter.model.Student;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,22 +36,20 @@ public class HouseDatasource {
             connector.closeConnection(conn, preparedStatement);
         }
     }
+
     public Integer getHouseIdByName(String houseName) {
 
         Connection conn = null;
         PreparedStatement preparedStatement = null;
         try {
             conn = connector.getConnection();
-            String selectSql = "SELECT " + COLUMN_HOUSE_ID +
-                    " FROM " + TABLE_HOUSE +
-                    " WHERE " + COLUMN_HOUSE_NAME + " = ?";
-
+            String selectSql = "SELECT " + COLUMN_HOUSE_ID + " FROM " +
+                    TABLE_HOUSE + " WHERE " + COLUMN_HOUSE_NAME + " ='" + houseName + "'";
             preparedStatement = conn.prepareStatement(selectSql);
-            preparedStatement.setString(1, houseName);
-            ResultSet rs = preparedStatement.executeQuery(selectSql);
 
+            ResultSet rs = preparedStatement.executeQuery(selectSql);
             if (rs.first()) {
-                return rs.getInt( 1);
+                return rs.getInt(COLUMN_HOUSE_ID);
             }
             connector.closeConnection(conn, null, rs, preparedStatement);
         } catch (Exception e) {

@@ -95,8 +95,8 @@ public class StudentDatasource {
                     ", " + COLUMN_STUDENT_NAME +
                     ", " + COLUMN_STUDENT_AGE +
                     ", " + COLUMN_STUDENT_HOUSE_ID +
-                    " FROM " + COLUMN_STUDENT_NAME +
-                    " WHERE id = ?";
+                    " FROM " + TABLE_STUDENT +
+                    " WHERE " + COLUMN_STUDENT_NAME + " = ?";
 
             preparedStatement = conn.prepareStatement(selectSql);
             preparedStatement.setString(1, studentName);
@@ -187,6 +187,50 @@ public class StudentDatasource {
             preparedStatement = conn.prepareStatement(updateCharacterSql);
             preparedStatement.setInt(1, houseId);
             preparedStatement.setString(2, studentName);
+            preparedStatement.executeUpdate();
+            student = getStudentsByName(studentName);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            connector.closeConnection(conn, preparedStatement);
+        }
+        return student;
+    }
+
+    public Student updateStudent(String studentName, Integer age, String characterName, Integer houseId) {
+
+        Student student = null;
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        try {
+            conn = connector.getConnection();
+
+            student = getStudentsByName(studentName);
+
+
+            if (studentName == null) {
+                studentName = student.getName();
+            }
+            if (age == null) {
+                age = student.getAge();
+            }
+            if (characterName == null) {
+                characterName = student.getCharacter();
+            }
+            if (houseId == null) {
+                houseId = student.getHouseId();
+            }
+
+            String updateCharacterSql = String.format("UPDATE %s SET %s = ?, %s = ?, %s = ? WHERE %s = ?",
+                    TABLE_STUDENT, COLUMN_STUDENT_AGE, COLUMN_STUDENT_HOUSE_ID, COLUMN_STUDENT_CHARACTER, COLUMN_STUDENT_NAME);
+
+            preparedStatement = conn.prepareStatement(updateCharacterSql);
+            preparedStatement.setInt(1, age);
+            preparedStatement.setInt(2, houseId);
+            preparedStatement.setString(3, characterName);
+            preparedStatement.setString(4, studentName);
+
             preparedStatement.executeUpdate();
             student = getStudentsByName(studentName);
 

@@ -35,4 +35,10 @@ public class StudentService {
     }
 
 
+    public Student updateStudent(String studentName, Integer age, String characterName, String houseName) {
+        Integer houseId = hd.getHouseIdByName(houseName);
+        return sd.updateStudent(studentName, age, characterName, houseId);
+    }
+
+
 }

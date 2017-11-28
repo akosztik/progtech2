@@ -43,10 +43,12 @@ public class NewView {
                     Creature creature = new Creature(text.getText());
                     CreatureService cs = new CreatureService();
                     cs.addCreature(creature);
+                    dialog.setVisible(false);
                 } else {
                     Character character = new Character(text.getText());
                     CharacterService cs = new CharacterService();
                     cs.addCharacter(character);
+                    dialog.setVisible(false);
                 }
             }
         });
@@ -81,10 +83,12 @@ public class NewView {
                     House house= new House(text.getText(),text2.getText());
                     HouseService hs =new HouseService();
                     hs.addHouse(house);
+                    dialog.setVisible(false);
                 }else{
                     Student student= new Student(Integer.parseInt(text2.getText()), text.getText());
                     StudentService ss =new StudentService();
                     ss.addStudent(student);
+                    dialog.setVisible(false);
                 }
 
             }
