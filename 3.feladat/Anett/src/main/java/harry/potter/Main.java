@@ -1,19 +1,20 @@
 package harry.potter;
 
+import harry.potter.controller.datasource.HouseDatasource;
 import harry.potter.controller.datasource.StudentDatasource;
-import harry.potter.model.Student;
+import harry.potter.controller.service.StudentService;
 import harry.potter.view.MainWindow;
-
-import java.util.List;
 
 public class Main {
 
-    private static StudentDatasource test = new StudentDatasource();
+//    private static HouseDatasource hd = new HouseDatasource();
+//
+//    private static StudentService test = new StudentService();
 
     public static void main(String[] args) {
 
-        MainWindow startup= new MainWindow();
-
+        MainWindow startup = new MainWindow();
+//        test.updateStudent("ttt", 25, "VALAMI CHARACTER 1", "iiii");
 //        test.addStudent(2, "SSSS", "AAAA");
 //        Main.listStudents();
 //        test.changeCharacter("AAAA", "WWWWW");
