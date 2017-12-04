@@ -9,7 +9,8 @@ public abstract class Entities {
         this.name = name;
         this.character = "semleges";
     }
-    public Entities(String name,String character) {
+
+    public Entities(String name, String character) {
         this.name = name;
         this.character = character;
     }

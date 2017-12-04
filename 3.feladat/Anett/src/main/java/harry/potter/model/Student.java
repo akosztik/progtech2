@@ -11,7 +11,12 @@ public class Student extends Entities {
         this.age = age;
     }
 
-    public Student(Integer id, Integer age, String character, String name, Integer houseId) {
+    public Student(Integer age, String character, String name) {
+        super(name, character);
+        this.age = age;
+    }
+
+    public Student(Integer age, String character, String name, Integer houseId, Integer id) {
         super(name, character);
         this.id = id;
         this.age = age;
@@ -50,8 +55,13 @@ public class Student extends Entities {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "age=" + age +
-                '}';
+        final StringBuffer sb = new StringBuffer("Student{");
+        sb.append("id=").append(id);
+        sb.append(", name=").append(super.getName());
+        sb.append(", char_name=").append(super.getCharacter());
+        sb.append(", age=").append(age);
+        sb.append(", houseId=").append(houseId);
+        sb.append('}');
+        return sb.toString();
     }
 }

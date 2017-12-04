@@ -11,6 +11,7 @@ public class Creature extends Entities {
         super(name);
         this.firstMate = null;
     }
+
     public Creature(String name, String character, Date firstMet) {
         super(name,character);
         this.firstMate = firstMet;

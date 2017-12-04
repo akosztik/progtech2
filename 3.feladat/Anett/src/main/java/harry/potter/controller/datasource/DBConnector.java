@@ -8,11 +8,15 @@ public class DBConnector {
 
 
     public static void closeConnection(Connection conn) {
-        closeConnection(conn, null);
+        closeConnection(conn, null, null, null);
     }
 
     public static void closeConnection(Connection conn, PreparedStatement preparedStatement) {
         closeConnection(conn, null, null, preparedStatement);
+    }
+
+    public static void closeConnection(Connection conn, ResultSet rs) {
+        closeConnection(conn, null, rs, null);
     }
 
     public static void closeConnection(Connection conn, Statement stmt) {

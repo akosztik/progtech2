@@ -15,9 +15,10 @@ public class StudentDatasource {
 
     DBConnector connector = new DBConnector();
 
-    public void addStudent(Integer age, String character, String name) {
+    public Student addStudent(Integer age, String character, String name) {
         Connection conn = null;
         PreparedStatement preparedStatement = null;
+        Student student = null;
         try {
             conn = connector.getConnection();
 
@@ -34,12 +35,15 @@ public class StudentDatasource {
             preparedStatement.setInt(3, age);
 
             preparedStatement.executeUpdate();
+            student = getStudentsByName(name);
+
             connector.closeConnection(conn);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             connector.closeConnection(conn, preparedStatement);
         }
+        return student;
     }
 
     public List<Student> listStudents() {
@@ -63,13 +67,13 @@ public class StudentDatasource {
             ResultSet rs = preparedStatement.executeQuery(selectSql);
 
             while (rs.next()) {
-                Long id = rs.getLong(COLUMN_STUDENT_ID);
-                String character = rs.getCharacterStream(COLUMN_STUDENT_CHARACTER).toString();
+                Integer id = rs.getInt(COLUMN_STUDENT_ID);
+                String character = rs.getString(COLUMN_STUDENT_CHARACTER).toString();
                 String name = rs.getString(COLUMN_STUDENT_NAME);
                 Integer age = rs.getInt(COLUMN_STUDENT_AGE);
                 Integer house_id = rs.getInt(COLUMN_STUDENT_HOUSE_ID);
 
-                students.add(new Student(age, name, character, house_id));
+                students.add(new Student(age, character, name, house_id, id));
             }
             connector.closeConnection(conn, stmt, rs, preparedStatement);
         } catch (Exception e) {
@@ -84,38 +88,28 @@ public class StudentDatasource {
 
         Student student = null;
         Connection conn = null;
-        PreparedStatement preparedStatement = null;
         Statement stmt = null;
 
         try {
             conn = connector.getConnection();
-
-            String selectSql = "SELECT " + COLUMN_STUDENT_CHARACTER +
-                    ", " + COLUMN_STUDENT_ID +
-                    ", " + COLUMN_STUDENT_NAME +
-                    ", " + COLUMN_STUDENT_AGE +
-                    ", " + COLUMN_STUDENT_HOUSE_ID +
-                    " FROM " + TABLE_STUDENT +
-                    " WHERE " + COLUMN_STUDENT_NAME + " = ?";
-
-            preparedStatement = conn.prepareStatement(selectSql);
-            preparedStatement.setString(1, studentName);
-            ResultSet rs = preparedStatement.executeQuery(selectSql);
-
-            while (rs.first()) {
+            String selectSql = "SELECT * FROM student WHERE name = '" + studentName + "'";
+            Statement statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery(selectSql);
+            while (rs.next()) {
                 Integer studentId = rs.getInt(COLUMN_STUDENT_ID);
-                String character = rs.getCharacterStream(COLUMN_STUDENT_CHARACTER).toString();
+                String character = rs.getString(COLUMN_STUDENT_CHARACTER);
                 String name = rs.getString(COLUMN_STUDENT_NAME);
                 Integer age = rs.getInt(COLUMN_STUDENT_AGE);
                 Integer house_id = rs.getInt(COLUMN_STUDENT_HOUSE_ID);
 
-                student = new Student(studentId, age, name, character, house_id);
+                student = new Student(age, name, character, house_id, studentId);
             }
-            connector.closeConnection(conn, stmt, rs, preparedStatement);
+
+            connector.closeConnection(conn, stmt, rs, null);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            connector.closeConnection(conn, preparedStatement);
+            connector.closeConnection(conn, stmt);
         }
         return student;
     }
