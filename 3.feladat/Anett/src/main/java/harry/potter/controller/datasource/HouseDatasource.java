@@ -16,6 +16,12 @@ public class HouseDatasource {
 
     DBConnector connector = new DBConnector();
 
+    /**.
+     * Ezekkel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy a hazunkat beszurja a tablaba.
+     * parametere: a haz neve, cimere.
+     */
+
     public void addHouse(String crest, String name) {
         Connection conn = null;
         PreparedStatement preparedStatement = null;

@@ -19,6 +19,12 @@ public class NewView {
     JDialog dialog;
     JButton button;
 
+
+    /**
+     * Ezzel a konstruktorral peldanyositjuk a NewView nevu osztalyt.
+     * Amely a megfelelo dialogusokat parositja az egyes menukhoz.
+     */
+
     public NewView(String d, String l, Frame f) {
         JPanel pan = new JPanel();
         pan.setLayout(new FlowLayout());

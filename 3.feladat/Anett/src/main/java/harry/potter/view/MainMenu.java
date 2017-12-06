@@ -20,6 +20,9 @@ public class MainMenu{
     JMenuItem list;
     JMenuItem searchNames;
 
+    /**
+     * Ezzel a konstruktorral peldanyositjuk a MainMenu nevu osztalyt.
+     */
     public MainMenu(JFrame frame){
         this.menuBar= new JMenuBar();
         this.newData= new JMenu("uj adatok felvitele");

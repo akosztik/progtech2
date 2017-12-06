@@ -7,6 +7,12 @@ public class Creature extends Entities {
 
     private Date firstMate;
 
+    /**
+    * A tulterhelt kostruktorok:
+     * a Creature letrehozasakor (elso) csak nevvel peldanyosit.
+     * Mig adatbazisbol letrejott Creature mar az adatbazisban letarolt osszes informacioval peldanyosit.
+     */
+
     public Creature(String name) {
         super(name);
         this.firstMate = null;
@@ -16,6 +22,10 @@ public class Creature extends Entities {
         super(name,character);
         this.firstMate = firstMet;
     }
+
+    /**
+     * A etkezo metodusok az osztaly getter es setter metodusai:
+     */
 
     public Date getFirstMate() {
         return firstMate;
@@ -29,7 +39,9 @@ public class Creature extends Entities {
             System.out.println("mar megadva");
         }
     }
-
+    /**
+     * A feluldefinialt toString metodus egy karakterlancot ad vissza.
+     */
     @Override
     public String toString() {
         return "Creature{" +

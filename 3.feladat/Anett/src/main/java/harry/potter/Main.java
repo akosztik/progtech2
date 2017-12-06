@@ -1,3 +1,14 @@
+/**
+ * <h1> Magiaugyi nyilvantarto rendszer</h1>
+ * A magiaugyi nyilvantarto egy program melynek a fo funkcioi:
+ * adatbevitel, modositas, es szures.
+ *<p>
+ * @author  Kosztik Anett
+ * @version 1.0
+ * @since   2017-11-28
+ * </p>
+ */
+
 package harry.potter;
 
 import harry.potter.controller.datasource.HouseDatasource;
@@ -11,9 +22,15 @@ import java.util.List;
 
 public class Main {
 
+
     private static HouseService houseService = new HouseService();
 
     private static StudentService studentService = new StudentService();
+
+
+    /**
+     * elindítja a programot. A fomenut es a keretet peldanyositja.
+     */
 
     public static void main(String[] args) {
         MainWindow startup = new MainWindow();

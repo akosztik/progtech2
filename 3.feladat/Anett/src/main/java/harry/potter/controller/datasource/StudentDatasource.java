@@ -15,7 +15,15 @@ public class StudentDatasource {
 
     DBConnector connector = new DBConnector();
 
+
+    /**.
+     * Ezekkel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy a tsnulot beszurja a tablaba.
+     * parametere: a tanulo eletkora, neve, karaktere.
+     */
+
     public Student addStudent(Integer age, String character, String name) {
+
         Connection conn = null;
         PreparedStatement preparedStatement = null;
         Student student = null;
@@ -45,6 +53,11 @@ public class StudentDatasource {
         }
         return student;
     }
+
+    /**.
+     * Ezekkel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy az osszes studentet lekerdezze. ArrayListtel ter vissza.
+     */
 
     public List<Student> listStudents() {
 
