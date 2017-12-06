@@ -120,7 +120,7 @@ public class StudentDatasource {
                 Integer age = rs.getInt(COLUMN_STUDENT_AGE);
                 Integer house_id = rs.getInt(COLUMN_STUDENT_HOUSE_ID);
 
-                student = new Student(age, name, character, house_id, studentId);
+                student = new Student(age, character, name, house_id, studentId);
             }
 
             connector.closeConnection(conn, stmt, rs, null);
