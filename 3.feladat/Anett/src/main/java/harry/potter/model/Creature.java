@@ -3,8 +3,7 @@ package harry.potter.model;
 import java.util.Date;
 
 public class Creature extends Entities {
-
-
+    private Integer Id;
     private Date firstMate;
 
     /**
@@ -18,9 +17,14 @@ public class Creature extends Entities {
         this.firstMate = null;
     }
 
-    public Creature(String name, String character, Date firstMet) {
+    public Creature(Integer Id,String name, String character) {
         super(name,character);
-        this.firstMate = firstMet;
+        this.Id=Id;
+    }
+    public Creature(Integer Id,String name, String character,Date firstMet) {
+        super(name,character);
+        this.Id=Id;
+        this.firstMate=firstMet;
     }
 
     /**
@@ -39,9 +43,17 @@ public class Creature extends Entities {
             System.out.println("mar megadva");
         }
     }
+
     /**
      * A feluldefinialt toString metodus egy karakterlancot ad vissza.
      */
+
+    public int getId() {
+        return this.Id;
+    }
+
+
+
     @Override
     public String toString() {
         return "Creature{" +

@@ -11,14 +11,16 @@ public class MainWindow {
      * Ezzel a konstruktorral peldanyositjuk a MainWindow nevu osztalyt.
      * Amely a frame-et es a fomenut generalja.
      */
-
     public MainWindow(){
         this.frame= new JFrame("Magiaugyi nyilvantarto");
-        this.mainMenu = new MainMenu(frame);
+        JPanel panel = new JPanel();
+        panel.setLayout(new CardLayout());
+        frame.getContentPane().add(panel);
+        this.mainMenu = new MainMenu(frame, panel);
         frame.setVisible(true);
         //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         //frame.setSize(screenSize.width, screenSize.height);
-        frame.setSize(400, 400);
+        frame.setSize(800, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }

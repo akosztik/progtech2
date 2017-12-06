@@ -1,25 +1,39 @@
 package harry.potter.model;
 
 public class Character {
-    String name;
+
+    private String name;
+    private Integer Id;
     /**
-     * Ezzel a konstruktorral peldanyositunk Charactert.
+     * Ezekkel a konstruktorral peldanyositunk Charactert.
      */
     public Character(String name)
     {
         this.name=name;
     }
+    public Character(Integer Id,String name)
+    {
+        this.Id=Id;
+        this.name=name;
+    }
+    /**
+     * Ezekkel a fuggvenyekkel a Character nevet, illetve id-ját kapjuk vissza.
+     */
 
-    @Override
+    public String getName(){
+
+        return this.name;
+    }
+    public Integer getId(){
+        return this.Id;
+    }
 
     /**
-     * Ezekkel a fuggvenyekkel a Character nevet kapjuk vissza.
      * Illetve a toString metodussal a Character nevet.
      */
+    @Override
     public String toString() {
         return this.name;
     }
-    public String getName(){
-        return this.name;
-    }
+
 }

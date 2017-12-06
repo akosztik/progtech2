@@ -65,6 +65,14 @@ public class StudentService {
         Integer houseId = hd.getHouseIdByName(houseName);
         return sd.updateStudent(studentName, age, characterName, houseId);
     }
+    public List<Student> listStudents() {
+        List<Student> students = sd.listStudents();
+        return students;
+    }
+    public Student getStudentsByName(String name){
+        Student student=sd.getStudentsByName(name);
+        return student;
+    }
 
 
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/doc" />
     <option name="OPTION_SCOPE" value="private" />
@@ -30,6 +31,9 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_3" default="false" project-jdk-name="9.0" project-jdk-type="JavaSDK">
 >>>>>>> DOC
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" project-jdk-name="9.0" project-jdk-type="JavaSDK">
+>>>>>>> view
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

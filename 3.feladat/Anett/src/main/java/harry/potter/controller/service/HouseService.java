@@ -7,6 +7,8 @@ import harry.potter.model.Student;
 
 import java.util.List;
 
+import java.util.List;
+
 public class HouseService {
 
     HouseDatasource hd = new HouseDatasource();
@@ -19,7 +21,11 @@ public class HouseService {
     public void addHouse(House house) {
         hd.addHouse(house.getCrest(), house.getName());
     }
-
+    public List<House> listHouses() {
+        List<House> houses = hd.listHouses();
+        System.out.println(houses.get(0).getName());
+        return houses;
+    }
 
     public Integer getHouseIdByName(String houseName) {
         return  hd.getHouseIdByName(houseName);

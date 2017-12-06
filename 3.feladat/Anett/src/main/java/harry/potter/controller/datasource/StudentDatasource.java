@@ -59,6 +59,9 @@ public class StudentDatasource {
      * hogy az osszes studentet lekerdezze. ArrayListtel ter vissza.
      */
 
+
+//https://alvinalexander.com/java/java-mysql-insert-example-preparedstatement
+
     public List<Student> listStudents() {
 
         List<Student> students = new ArrayList<>();
@@ -105,10 +108,12 @@ public class StudentDatasource {
 
         try {
             conn = connector.getConnection();
+
             String selectSql = "SELECT * FROM student WHERE name = '" + studentName + "'";
             Statement statement = conn.createStatement();
             ResultSet rs = statement.executeQuery(selectSql);
             while (rs.next()) {
+
                 Integer studentId = rs.getInt(COLUMN_STUDENT_ID);
                 String character = rs.getString(COLUMN_STUDENT_CHARACTER);
                 String name = rs.getString(COLUMN_STUDENT_NAME);

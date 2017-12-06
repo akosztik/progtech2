@@ -16,8 +16,8 @@ import java.awt.event.ActionListener;
 
 
 public class NewView {
-    JDialog dialog;
-    JButton button;
+    private JDialog dialog;
+    private JButton button;
 
 
     /**
@@ -27,19 +27,19 @@ public class NewView {
 
     public NewView(String d, String l, Frame f) {
         JPanel pan = new JPanel();
-        pan.setLayout(new FlowLayout());
+        pan.setLayout(new BorderLayout());
         dialog = new JDialog(f);
         dialog.setResizable(true);
         dialog.setTitle(d);
         dialog.setModal(true);
         //dialog.add(new JLabel(l));
-        pan.add(new JLabel(l));
+        pan.add(new JLabel(l),BorderLayout.WEST);
         JTextField text = new JTextField(20);
-        pan.add(text);
+        pan.add(text, BorderLayout.EAST);
         //dialog.add(text);
         button = new JButton("Bevitel");
         //dialog.add(button);
-        pan.add(button);
+        pan.add(button,BorderLayout.SOUTH);
         dialog.add(pan);
         dialog.pack();
         button.addActionListener(new ActionListener() {
@@ -63,22 +63,25 @@ public class NewView {
 
     public NewView(String d, String l, String ll, Frame f) {
         JPanel pan = new JPanel();
-        pan.setLayout(new FlowLayout());
+        pan.setLayout(new BorderLayout());
+        JPanel pan2 = new JPanel();
+        pan2.setLayout(new GridLayout(0,2));
+        pan.add(pan2, BorderLayout.NORTH);
         dialog = new JDialog(f);
         dialog.setResizable(true);
         dialog.setTitle(d);
         //dialog.add(new JLabel(l));
-        pan.add(new JLabel(l));
+        pan2.add(new JLabel(l));
         JTextField text = new JTextField(20);
         //dialog.add(text);
-        pan.add(text);
+        pan2.add(text);
         //dialog.add(new JLabel(ll));
-        pan.add(new JLabel(ll));
+        pan2.add(new JLabel(ll));
         JTextField text2 = new JTextField(20);
         //dialog.add(text2);
-        pan.add(text2);
+        pan2.add(text2);
         button = new JButton("Bevitel");
-        pan.add(button);
+        pan.add(button, BorderLayout.SOUTH);
         //dialog.add(button);
         dialog.add(pan);
         dialog.pack();
@@ -100,6 +103,9 @@ public class NewView {
             }
         });
 
+    }
+    public Dialog getDialog(){
+        return this.dialog;
     }
 
 }
