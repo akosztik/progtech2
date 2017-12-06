@@ -3,17 +3,21 @@ package harry.potter.model;
 import java.util.Date;
 
 public class Creature extends Entities {
-
-
+    private Integer Id;
     private Date firstMate;
 
     public Creature(String name) {
         super(name);
         this.firstMate = null;
     }
-    public Creature(String name, String character, Date firstMet) {
+    public Creature(Integer Id,String name, String character) {
         super(name,character);
-        this.firstMate = firstMet;
+        this.Id=Id;
+    }
+    public Creature(Integer Id,String name, String character,Date firstMet) {
+        super(name,character);
+        this.Id=Id;
+        this.firstMate=firstMet;
     }
 
     public Date getFirstMate() {
@@ -28,6 +32,10 @@ public class Creature extends Entities {
             System.out.println("mar megadva");
         }
     }
+    public int getId() {
+        return this.Id;
+    }
+
 
     @Override
     public String toString() {

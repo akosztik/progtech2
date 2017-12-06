@@ -50,15 +50,17 @@ public class CharacterDatasource {
             conn = connector.getConnection();
 
             String selectSql = "SELECT "  + COLUMN_CHARACTER_ID +
+                    ", " + COLUMN_CHARACTER_NAME +
                     " FROM " + TABLE_CHARACTER;
 
             preparedStatement = conn.prepareStatement(selectSql);
             ResultSet rs = preparedStatement.executeQuery(selectSql);
 
             while (rs.next()) {
-                String name = rs.getString(COLUMN_CREATURE_NAME);
+                Integer Id = rs.getInt(COLUMN_CHARACTER_ID);
+                String name = rs.getString(COLUMN_CHARACTER_NAME);
 
-                characters.add(new Character(name));
+                characters.add(new Character(Id,name));
             }
             connector.closeConnection(conn, stmt, rs, preparedStatement);
         } catch (Exception e) {

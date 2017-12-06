@@ -6,6 +6,7 @@ import harry.potter.controller.datasource.StudentDatasource;
 import harry.potter.model.Student;
 
 import java.awt.event.ActionEvent;
+import java.util.List;
 
 public class StudentService {
 
@@ -38,6 +39,14 @@ public class StudentService {
     public Student updateStudent(String studentName, Integer age, String characterName, String houseName) {
         Integer houseId = hd.getHouseIdByName(houseName);
         return sd.updateStudent(studentName, age, characterName, houseId);
+    }
+    public List<Student> listStudents() {
+        List<Student> students = sd.listStudents();
+        return students;
+    }
+    public Student getStudentsByName(String name){
+        Student student=sd.getStudentsByName(name);
+        return student;
     }
 
 

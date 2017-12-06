@@ -1,10 +1,14 @@
 package harry.potter.controller.datasource;
 
+import harry.potter.model.House;
 import harry.potter.model.Student;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import static harry.potter.controller.datasource.DatabaseConstants.*;
 
@@ -35,6 +39,43 @@ public class HouseDatasource {
         } finally {
             connector.closeConnection(conn, preparedStatement);
         }
+    }
+
+
+    public List<House> listHouses() {
+
+        List<House> houses = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        Statement stmt = null;
+
+        try {
+            conn = connector.getConnection();
+
+            String selectSql = "SELECT " + COLUMN_HOUSE_ID +
+                    ", " + COLUMN_HOUSE_NAME +
+                    ", " + COLUMN_HOUSE_CREST +
+                    " FROM " + TABLE_HOUSE;
+
+            preparedStatement = conn.prepareStatement(selectSql);
+            ResultSet rs = preparedStatement.executeQuery(selectSql);
+
+            while (rs.next()) {
+                Integer id = rs.getInt(COLUMN_HOUSE_ID);
+                String name = rs.getString(COLUMN_HOUSE_NAME);
+                String crest = rs.getString(COLUMN_HOUSE_CREST);
+
+                House house = new House(id, name, crest);
+                System.out.println("..............."+house.getName());
+                houses.add(house);
+            }
+            connector.closeConnection(conn, stmt, rs, preparedStatement);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            connector.closeConnection(conn, preparedStatement);
+        }
+        return houses;
     }
 
     public Integer getHouseIdByName(String houseName) {

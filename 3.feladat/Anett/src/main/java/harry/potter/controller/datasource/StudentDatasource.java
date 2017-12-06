@@ -41,7 +41,7 @@ public class StudentDatasource {
             connector.closeConnection(conn, preparedStatement);
         }
     }
-
+//https://alvinalexander.com/java/java-mysql-insert-example-preparedstatement
     public List<Student> listStudents() {
 
         List<Student> students = new ArrayList<>();
@@ -95,8 +95,8 @@ public class StudentDatasource {
                     ", " + COLUMN_STUDENT_NAME +
                     ", " + COLUMN_STUDENT_AGE +
                     ", " + COLUMN_STUDENT_HOUSE_ID +
-                    " FROM " + TABLE_STUDENT +
-                    " WHERE " + COLUMN_STUDENT_NAME + " = ?";
+                   " FROM " + TABLE_STUDENT +
+                    " WHERE " + COLUMN_STUDENT_NAME + " LIKE ?";
 
             preparedStatement = conn.prepareStatement(selectSql);
             preparedStatement.setString(1, studentName);
