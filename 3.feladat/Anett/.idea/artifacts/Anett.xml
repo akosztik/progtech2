@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact name="Anett">
+    <output-path>$PROJECT_DIR$/out/artifacts/Anett</output-path>
+    <root id="root" />
+  </artifact>
+</component>

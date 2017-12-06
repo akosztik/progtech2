@@ -26,7 +26,7 @@ public abstract class Entities {
      * vagy az Entities characterevel vagy a nevevel ternek vissza.
      */
     public String getCharacter() {
-        return character;
+        return this.character;
     }
 
     public void setCharacter(String character) {
@@ -34,7 +34,7 @@ public abstract class Entities {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
