@@ -74,10 +74,10 @@ public class CreatureDatasource {
 
             while (rs.next()) {
                 Integer id = rs.getInt(COLUMN_CREATURE_ID);
-                String character = rs.getCharacterStream(COLUMN_CREATURE_CHARACTER).toString();
+                String character = rs.getString(COLUMN_CREATURE_CHARACTER);
                 String name = rs.getString(COLUMN_CREATURE_NAME);
 
-                creatures.add(new Creature(id,character, name));
+                creatures.add(new Creature(id,name, character));
             }
             connector.closeConnection(conn, stmt, rs, preparedStatement);
         } catch (Exception e) {
