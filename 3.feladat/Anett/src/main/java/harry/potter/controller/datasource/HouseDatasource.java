@@ -47,6 +47,11 @@ public class HouseDatasource {
         }
     }
 
+    /**.
+     * Ezzel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy a tablaban levo osszes hazat kilistazzuk.
+     * visszateresi ertek: arraylist.
+     */
 
     public List<House> listHouses() {
 
@@ -83,7 +88,11 @@ public class HouseDatasource {
         }
         return houses;
     }
-
+    /**.
+     * Ezzel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy a haz id -jet nev alapjan megkapjuk.
+     * parametere: a haz neve.
+     */
     public Integer getHouseIdByName(String houseName) {
 
         Connection conn = null;

@@ -16,10 +16,19 @@ public class CharacterService {
     public void addCharacter(Character character) {
         chard.addCharacter(character.getName());
     }
+    /**
+     * Ezzel a metodussal a CharacterDatasource metodusa meghivva,
+     * amely az sql parancsot generlja es futtatja, egy listat kapunk vissza az összes
+     * karakterrel.
+     */
     public List<Character> listCharacters() {
         List<Character> characters = chard.listCharacters();
         return characters;
     }
+    /**
+     * Ezzel a metodussal listabol string arrayt allitunk elo.
+     * parametere: ArrayList
+     */
     public String[] toArray(List<Character> characterList){
         String[] list=new String[characterList.size()];
         for (int i =0;i<characterList.size();i++ ){

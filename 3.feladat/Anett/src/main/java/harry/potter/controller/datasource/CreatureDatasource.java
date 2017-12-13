@@ -87,7 +87,11 @@ public class CreatureDatasource {
         }
         return creatures;
     }
-
+    /**.
+     * Ezzel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy a lenyhez tartozo jellemet beszurja a tablaba.
+     * parametere: a leny neve, az uj jellem.
+     */
     public void changeCharacter(String findedName, String newCharacter) {
         Connection conn = null;
         PreparedStatement preparedStatement = null;
@@ -146,6 +150,11 @@ public class CreatureDatasource {
         }
         return creature;
     }
+    /**.
+     * Ezekkel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy a lenynek uj elso talalkozasi datumot hatarozzon meg.
+     * parametere: a leny neve, uj datum string formatuban : YYMMDD.
+     */
     public Creature updateCreature(String creatureName,  String firstMet) {
 
         Creature creature = null;

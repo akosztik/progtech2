@@ -36,15 +36,26 @@ public class StudentService {
         return sd.addStudent(student.getAge(), student.getCharacter(), student.getName());
     }
 
-
+    /**
+     * Ezzel a metodussal a StudentDatasource metodusanak adjuk at a student nevet .
+     * parametere: a student neve.
+     * visszater egy tanulo peldannyal.
+     */
     public Student getStudentsByName(String studentName) {
         return sd.getStudentsByName(studentName);
     }
-
+    /**
+     * Ezzel a metodussal a StudentDatasource azonos nevu metodusat hivjuk meg.
+     * visszater egy tanulo listaval.
+     */
     public List<Student> listStudents() {
         return sd.listStudents();
     }
-
+    /**
+     * Ezzel a metodussal a StudentDatasource azonos nevu metodusat hivjuk meg.
+     * parameterei:tanulo neve(string),haz neve(string)
+     * visszater egy tanulo peldannyal.
+     */
     public Student addStudentToHouse(String studentName, String houseName) {
         Integer houseId = hd.getHouseIdByName(houseName);
         return sd.addStudentToHouse(studentName, houseId);
@@ -60,6 +71,10 @@ public class StudentService {
         Integer houseId = hd.getHouseIdByName(houseName);
         return sd.addStudentToHouse(studentName, houseId);
     }
+    /**
+     * Ezzel a metodussal listabol string arrayt allitunk elo.
+     * parametere: ArrayList
+     */
     public String[] toArray(List<Student> studentList){
         String[] list=new String[studentList.size()];
         for (int i =0;i<studentList.size();i++ ){

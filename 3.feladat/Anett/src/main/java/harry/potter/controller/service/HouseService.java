@@ -21,12 +21,21 @@ public class HouseService {
     public void addHouse(House house) {
         hd.addHouse(house.getCrest(), house.getName());
     }
+
+    /**
+     * Ezzel a metodussal HouseDatasource
+     * azonos nevu metodusat hivjuk meg es arrayListet kapunk.
+     */
     public List<House> listHouses() {
         List<House> houses = hd.listHouses();
         System.out.println(houses.get(0).getName());
         return houses;
     }
-
+    /**
+     * Ezzel a metodussal a HouseDatasource getHouseIdByName metodusat
+     * hivjuk meg mely egy integert ad vissza.
+     * parameterei egy string.
+     */
     public Integer getHouseIdByName(String houseName) {
         return  hd.getHouseIdByName(houseName);
     }

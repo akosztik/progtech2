@@ -99,7 +99,11 @@ public class StudentDatasource {
         }
         return students;
     }
-
+    /**.
+     * Ezzel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy a tanulo neve alapjan megtalaljuk a tanulot.
+     * parameter: tanulo neve.
+     */
     public Student getStudentsByName(String studentName) {
 
         Student student = null;
@@ -132,6 +136,13 @@ public class StudentDatasource {
         return student;
     }
 
+    /**.
+     * Ezekkel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy az egy hazhoz tartozo tanulok szamat megismerjuk.
+     * parametere: a haz id-je.
+     * visszateresi ertek integer
+     */
+
     public Integer numberOfStudentsByHouseName(Integer houseId) {
 
         Connection conn = null;
@@ -159,7 +170,11 @@ public class StudentDatasource {
         }
         return 0;
     }
-
+    /**.
+     * Ezekkel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy a tanulohoz tartozo jellemet megvaltoztassuk.
+     * parametere: a tanulo neve, uj jelleme.
+     */
     public Student changeCharacter(String findedName, String newCharacter) {
         Connection conn = null;
         PreparedStatement preparedStatement = null;
@@ -184,6 +199,12 @@ public class StudentDatasource {
         }
         return student;
     }
+
+    /**.
+     * Ezzel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy a hallgatonkat adott hazhoz sorolja.
+     * parametere: a tanulo neve, a haz id-je.
+     */
 
     public Student addStudentToHouse(String studentName, Integer houseId) {
 
@@ -210,6 +231,11 @@ public class StudentDatasource {
         return student;
     }
 
+    /**.
+     * Ezzel a metodussal a DB Connection-on keresztul sql parancsot adunk ki,
+     * hogy a tanulo kulonbozo jellemzoit megvaltoztathatjuk---nem hasznalt.
+     * parametere: a hallgato osszes jellemzoje.
+     */
     public Student updateStudent(String studentName, Integer age, String characterName, Integer houseId) {
 
         Student student = null;

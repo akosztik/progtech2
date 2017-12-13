@@ -101,6 +101,9 @@ public class MainMenu{
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("addFirstMet");
+                SolveHousing sh = new SolveHousing("elso talalkozasi datum", "Válasszon lényt! ","adja meg az első találkozási dátumot: YYMMDD", frame);
+                sh.getDialog().setLocationRelativeTo(frame);
+                sh.getDialog().setVisible(true);
             }
         });
         modify.add(changeCharacter);
