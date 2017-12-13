@@ -36,4 +36,7 @@ public class CreatureService {
     public void changeCharacter(String name, String character){
         cd.changeCharacter(name,character);
     }
+    public void updateCreature(String name, String date){
+        cd.updateCreature(name, date);
+    }
 }

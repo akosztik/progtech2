@@ -81,6 +81,68 @@ public class SolveHousing {
             }
         });
     }
+    public SolveHousing(String d,String l,String ll,JFrame f) {
+        JPanel pan = new JPanel();
+        pan.setLayout(new BorderLayout());
+        JPanel pan2 = new JPanel();
+        pan2.setLayout(new FlowLayout());
+        card = new JPanel();
+        card.setLayout(new CardLayout());
+
+        dialog = new JDialog(f);
+        dialog.setResizable(true);
+        dialog.setTitle(d);
+
+        CreatureService ss = new CreatureService();
+        java.util.List<Creature> creatures = ss.listCreatures();
+        String[] filterOptions = ss.toArray(creatures);
+        selectName = new JComboBox(filterOptions);
+        selectName.setSelectedIndex(1);
+
+        pan2.add(new JLabel(l));
+        pan2.add(selectName);
+        pan2.add(new JLabel(ll));
+        JTextField dateString=new JTextField();
+        pan2.add(dateString);
+
+        dialog.getContentPane().add(pan);
+        pan.add(pan2, BorderLayout.NORTH);
+        pan.add(card, BorderLayout.CENTER);
+        pan.setVisible(true);
+        dialog.pack();
+        selectName.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getSource() == selectName) {
+                    JComboBox cb = (JComboBox) e.getSource();
+                    selectedName = (String) cb.getSelectedItem();
+                    JPanel combos;
+                    combos = new JPanel(new GridLayout(1, 1));
+                    CreatureService cres = new CreatureService();
+                    JTextArea msg;
+                    try{
+                        cres.updateCreature(selectedName,dateString.getText());
+                        msg=new JTextArea("Hozzáadtuk az első fellelést ....  ");
+                    }catch(Exception error){
+                        Alert.infoBox("Helyesformátum:YYMMDD!","helytelen formatum");
+                        msg=new JTextArea("Hozzáadtuk az első fellelést ....  ");
+                    }
+                    combos.add(msg);
+                    //remove panels:
+                    card.removeAll();
+                    card.repaint();
+                    card.revalidate();
+                    //adding panels:
+                    card.add(combos);
+                    card.repaint();
+                    card.revalidate();
+                    dialog.pack();
+
+
+                }
+            }
+        });
+    }
 
     public JDialog getDialog() {
         return dialog;

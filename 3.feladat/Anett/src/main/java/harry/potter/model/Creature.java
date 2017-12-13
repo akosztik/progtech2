@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Creature extends Entities {
     private Integer Id;
-    private Date firstMate;
+    private String firstMate;
 
     /**
     * A tulterhelt kostruktorok:
@@ -21,7 +21,7 @@ public class Creature extends Entities {
         super(name,character);
         this.Id=Id;
     }
-    public Creature(Integer Id,String name, String character,Date firstMet) {
+    public Creature(Integer Id,String name, String character,String firstMet) {
         super(name,character);
         this.Id=Id;
         this.firstMate=firstMet;
@@ -31,11 +31,11 @@ public class Creature extends Entities {
      * A kovetkezo metodusok az osztaly getter es setter metodusai:
      */
 
-    public Date getFirstMate() {
+    public String getFirstMate() {
         return firstMate;
     }
 
-    public void setFirstMate(Date firstMate)  {
+    public void setFirstMate(String firstMate)  {
         if (firstMate==null){
             this.firstMate = firstMate;
         }
