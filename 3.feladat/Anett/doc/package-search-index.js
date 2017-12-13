@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"harry.potter"},{"l":"harry.potter.controller.datasource"},{"l":"harry.potter.controller.service"},{"l":"harry.potter.model"},{"l":"harry.potter.view"}]
