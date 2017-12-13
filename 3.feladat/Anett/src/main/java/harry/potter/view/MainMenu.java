@@ -279,11 +279,15 @@ public class MainMenu{
                                 String colS[] = {"azonosító", "név", "kor", "jellem"};
                                 tableModel = new DefaultTableModel(colS, 0);
                                 table = new JTable(tableModel);
-                                Object[] rowInputS = {student.getId(), student.getName(), student.getAge(), student.getCharacter()};
-                                tableModel.addRow(rowInputS);
                                 pan = new JPanel(new BorderLayout());
-                                pan.add(table.getTableHeader(), BorderLayout.PAGE_START);
-                                pan.add(table, BorderLayout.CENTER);
+                                try {
+                                    Object[] rowInputS = {student.getId(), student.getName(), student.getAge(), student.getCharacter()};
+                                    tableModel.addRow(rowInputS);
+                                    pan.add(table.getTableHeader(), BorderLayout.PAGE_START);
+                                    pan.add(table, BorderLayout.CENTER);
+                                }catch(Exception exception){
+                                    Alert.infoBox("A név nem létezik!","tanuló ellenőrzése");
+                                }
                                 //remove panels:
                                 sn.tablePanel.removeAll();
                                 sn.tablePanel.repaint();
@@ -301,11 +305,15 @@ public class MainMenu{
                                 String colCR[] = {"azonosító", "név", "jellem"};
                                 tableModel = new DefaultTableModel(colCR, 0);
                                 table = new JTable(tableModel);
-                                Object[] rowInput = {creature.getId(), creature.getName(), creature.getCharacter()};
-                                tableModel.addRow(rowInput);
                                 pan = new JPanel(new BorderLayout());
-                                pan.add(table.getTableHeader(), BorderLayout.PAGE_START);
-                                pan.add(table, BorderLayout.CENTER);
+                                try{
+                                    Object[] rowInput = {creature.getId(), creature.getName(), creature.getCharacter()};
+                                    tableModel.addRow(rowInput);
+                                    pan.add(table.getTableHeader(), BorderLayout.PAGE_START);
+                                    pan.add(table, BorderLayout.CENTER);
+                                }catch(Exception exception){
+                                    Alert.infoBox("A név nem létezik!","lény ellenőrzése");
+                                }
                                 //remove panels:
                                 sn.tablePanel.removeAll();
                                 sn.tablePanel.repaint();
