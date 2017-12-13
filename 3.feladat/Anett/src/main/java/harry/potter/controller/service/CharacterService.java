@@ -2,6 +2,7 @@ package harry.potter.controller.service;
 
 import harry.potter.controller.datasource.CharacterDatasource;
 import harry.potter.model.Character;
+import harry.potter.model.Student;
 
 import java.util.List;
 
@@ -18,5 +19,12 @@ public class CharacterService {
     public List<Character> listCharacters() {
         List<Character> characters = chard.listCharacters();
         return characters;
+    }
+    public String[] toArray(List<Character> characterList){
+        String[] list=new String[characterList.size()];
+        for (int i =0;i<characterList.size();i++ ){
+            list[i]=characterList.get(i).getName();
+        }
+        return list;
     }
 }

@@ -3,6 +3,7 @@ package harry.potter.controller.service;
 import harry.potter.model.Character;
 import harry.potter.controller.datasource.HouseDatasource;
 import harry.potter.controller.datasource.StudentDatasource;
+import harry.potter.model.Creature;
 import harry.potter.model.Student;
 
 import java.awt.event.ActionEvent;
@@ -58,6 +59,13 @@ public class StudentService {
 
         Integer houseId = hd.getHouseIdByName(houseName);
         return sd.addStudentToHouse(studentName, houseId);
+    }
+    public String[] toArray(List<Student> studentList){
+        String[] list=new String[studentList.size()];
+        for (int i =0;i<studentList.size();i++ ){
+            list[i]=studentList.get(i).getName();
+        }
+        return list;
     }
 
 

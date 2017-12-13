@@ -108,6 +108,10 @@ public class MainMenu{
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("changeCharacter");
+                ModifyCharacter mc = new ModifyCharacter("Jellemváltozás", "Válasszon : ", frame);
+                mc.getDialog().setLocationRelativeTo(frame);
+                mc.getDialog().setVisible(true);
+
             }
         });
         modify.add(solveHousing);
@@ -115,6 +119,9 @@ public class MainMenu{
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("solveHousing");
+                SolveHousing sh = new SolveHousing("Teszlek Süveg :)", "Válasszon diákot! ", frame);
+                sh.getDialog().setLocationRelativeTo(frame);
+                sh.getDialog().setVisible(true);
             }
         });
         filter.add(list);
@@ -122,31 +129,31 @@ public class MainMenu{
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("list");
-                FilterView filter= new FilterView();
+                FilterView filter = new FilterView();
                 filter.selectBox.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        if (e.getSource() == filter.selectBox){
-                            JComboBox cb=(JComboBox)e.getSource();
-                            String selectedFilter=(String)cb.getSelectedItem();
+                        if (e.getSource() == filter.selectBox) {
+                            JComboBox cb = (JComboBox) e.getSource();
+                            String selectedFilter = (String) cb.getSelectedItem();
                             DefaultTableModel tableModel;
                             JTable table;
                             JPanel pan;
-                            switch(selectedFilter) {
+                            switch (selectedFilter) {
                                 case "házak":
                                     System.out.println("házak");
-                                    HouseService hs =new HouseService();
-                                    List<House> houses= hs.listHouses();
+                                    HouseService hs = new HouseService();
+                                    List<House> houses = hs.listHouses();
                                     System.out.println("házak");
-                                    String colH[] = {"azonosító","név","címer"};
+                                    String colH[] = {"azonosító", "név", "címer"};
                                     tableModel = new DefaultTableModel(colH, 0);
                                     table = new JTable(tableModel);
-                                    for (House house: houses){
-                                        Object[] rowInput={house.getId(),house.getName(),house.getCrest()};
+                                    for (House house : houses) {
+                                        Object[] rowInput = {house.getId(), house.getName(), house.getCrest()};
                                         tableModel.addRow(rowInput);
                                     }
-                                    pan= new JPanel(new BorderLayout());
-                                    pan.add(table.getTableHeader(),BorderLayout.PAGE_START);
+                                    pan = new JPanel(new BorderLayout());
+                                    pan.add(table.getTableHeader(), BorderLayout.PAGE_START);
                                     pan.add(table, BorderLayout.CENTER);
                                     //remove panels:
                                     filter.tablePanel.removeAll();
@@ -160,17 +167,17 @@ public class MainMenu{
                                     break;
                                 case "tanulók":
                                     System.out.println("tanulók");
-                                    StudentService ss =new StudentService();
-                                    List<Student> Student= ss.listStudents();
-                                    String colS[] = {"azonosító","név","kor","jellem"};
+                                    StudentService ss = new StudentService();
+                                    List<Student> Student = ss.listStudents();
+                                    String colS[] = {"azonosító", "név", "kor", "jellem"};
                                     tableModel = new DefaultTableModel(colS, 0);
                                     table = new JTable(tableModel);
-                                    for (Student student: Student){
-                                        Object[] rowInput={student.getId(),student.getName(),student.getAge(),student.getCharacter()};
+                                    for (Student student : Student) {
+                                        Object[] rowInput = {student.getId(), student.getName(), student.getAge(), student.getCharacter()};
                                         tableModel.addRow(rowInput);
                                     }
-                                    pan= new JPanel(new BorderLayout());
-                                    pan.add(table.getTableHeader(),BorderLayout.PAGE_START);
+                                    pan = new JPanel(new BorderLayout());
+                                    pan.add(table.getTableHeader(), BorderLayout.PAGE_START);
                                     pan.add(table, BorderLayout.CENTER);
                                     //remove panels:
                                     filter.tablePanel.removeAll();
@@ -185,17 +192,17 @@ public class MainMenu{
 
                                 case "jellemek":
                                     System.out.println("jellemek");
-                                    CharacterService cs =new CharacterService();
+                                    CharacterService cs = new CharacterService();
                                     List<Character> characters = cs.listCharacters();
-                                    String colC[] = {"azonosító","név"};
+                                    String colC[] = {"azonosító", "név"};
                                     tableModel = new DefaultTableModel(colC, 0);
                                     table = new JTable(tableModel);
-                                    for (Character character: characters){
-                                        Object[] rowInput={character.getId(),character.getName()};
+                                    for (Character character : characters) {
+                                        Object[] rowInput = {character.getId(), character.getName()};
                                         tableModel.addRow(rowInput);
                                     }
-                                    pan= new JPanel(new BorderLayout());
-                                    pan.add(table.getTableHeader(),BorderLayout.PAGE_START);
+                                    pan = new JPanel(new BorderLayout());
+                                    pan.add(table.getTableHeader(), BorderLayout.PAGE_START);
                                     pan.add(table, BorderLayout.CENTER);
                                     //remove panels:
                                     filter.tablePanel.removeAll();
@@ -208,17 +215,17 @@ public class MainMenu{
                                     break;
                                 case "lények":
                                     System.out.println("lények");
-                                    CreatureService crs =new CreatureService();
+                                    CreatureService crs = new CreatureService();
                                     List<Creature> creatures = crs.listCreatures();
-                                    String colCR[] = {"azonosító","név","jellem"};
+                                    String colCR[] = {"azonosító", "név", "jellem"};
                                     tableModel = new DefaultTableModel(colCR, 0);
                                     table = new JTable(tableModel);
-                                    for (Creature creature: creatures){
-                                        Object[] rowInput={creature.getId(),creature.getName(), creature.getCharacter()};
+                                    for (Creature creature : creatures) {
+                                        Object[] rowInput = {creature.getId(), creature.getName(), creature.getCharacter()};
                                         tableModel.addRow(rowInput);
                                     }
-                                    pan= new JPanel(new BorderLayout());
-                                    pan.add(table.getTableHeader(),BorderLayout.PAGE_START);
+                                    pan = new JPanel(new BorderLayout());
+                                    pan.add(table.getTableHeader(), BorderLayout.PAGE_START);
                                     pan.add(table, BorderLayout.CENTER);
                                     //remove panels:
                                     filter.tablePanel.removeAll();
@@ -248,7 +255,7 @@ public class MainMenu{
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("searchNames");
-                searchName sn= new searchName();
+                searchName sn = new searchName();
                 sn.selectBox.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
@@ -264,18 +271,18 @@ public class MainMenu{
                         DefaultTableModel tableModel;
                         JTable table;
                         JPanel pan;
-                        switch(sn.selectedFilter) {
+                        switch (sn.selectedFilter) {
                             case "tanulók":
                                 System.out.println("search tanulók");
-                                StudentService ss =new StudentService();
-                                Student student= ss.getStudentsByName(sn.text.getText());
-                                String colS[] = {"azonosító","név","kor","jellem"};
+                                StudentService ss = new StudentService();
+                                Student student = ss.getStudentsByName(sn.text.getText());
+                                String colS[] = {"azonosító", "név", "kor", "jellem"};
                                 tableModel = new DefaultTableModel(colS, 0);
                                 table = new JTable(tableModel);
-                                Object[] rowInputS={student.getId(),student.getName(),student.getAge(),student.getCharacter()};
+                                Object[] rowInputS = {student.getId(), student.getName(), student.getAge(), student.getCharacter()};
                                 tableModel.addRow(rowInputS);
-                                pan= new JPanel(new BorderLayout());
-                                pan.add(table.getTableHeader(),BorderLayout.PAGE_START);
+                                pan = new JPanel(new BorderLayout());
+                                pan.add(table.getTableHeader(), BorderLayout.PAGE_START);
                                 pan.add(table, BorderLayout.CENTER);
                                 //remove panels:
                                 sn.tablePanel.removeAll();
@@ -289,15 +296,15 @@ public class MainMenu{
                                 break;
                             case "lények":
                                 System.out.println("search lények");
-                                CreatureService crs =new CreatureService();
+                                CreatureService crs = new CreatureService();
                                 Creature creature = crs.getCreatureByName(sn.text.getText());
-                                String colCR[] = {"azonosító","név","jellem"};
+                                String colCR[] = {"azonosító", "név", "jellem"};
                                 tableModel = new DefaultTableModel(colCR, 0);
                                 table = new JTable(tableModel);
-                                Object[] rowInput={creature.getId(),creature.getName(), creature.getCharacter()};
+                                Object[] rowInput = {creature.getId(), creature.getName(), creature.getCharacter()};
                                 tableModel.addRow(rowInput);
-                                pan= new JPanel(new BorderLayout());
-                                pan.add(table.getTableHeader(),BorderLayout.PAGE_START);
+                                pan = new JPanel(new BorderLayout());
+                                pan.add(table.getTableHeader(), BorderLayout.PAGE_START);
                                 pan.add(table, BorderLayout.CENTER);
                                 //remove panels:
                                 sn.tablePanel.removeAll();
@@ -323,6 +330,6 @@ public class MainMenu{
             }
 
         });
+        }
 
-    }
 }

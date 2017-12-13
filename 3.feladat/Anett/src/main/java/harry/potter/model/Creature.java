@@ -28,7 +28,7 @@ public class Creature extends Entities {
     }
 
     /**
-     * A etkezo metodusok az osztaly getter es setter metodusai:
+     * A kovetkezo metodusok az osztaly getter es setter metodusai:
      */
 
     public Date getFirstMate() {

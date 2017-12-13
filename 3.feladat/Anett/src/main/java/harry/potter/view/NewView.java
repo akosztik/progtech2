@@ -104,6 +104,7 @@ public class NewView {
         });
 
     }
+
     public Dialog getDialog(){
         return this.dialog;
     }
